@@ -1,6 +1,6 @@
 # DY-cloudsave
 
-DY云储存
+DY云储存(PHP:7.4)
 
 预览官网:http://pan.sthudy.top/
 
