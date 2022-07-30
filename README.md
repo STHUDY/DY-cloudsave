@@ -20,9 +20,13 @@ DY云储存(PHP:7.4)
          	break;
       }
       
-这里提供一个账号和密码
+API-USE
 
       账号:pneumonoultramicroscopicsilicovo
       密码:リュウグウノオトヒメノモトユイノキリハズシ
+      UIC:101655625233194
 
 购买API 
+
+数据库:
+      导入数据库文件：User_Load_info.sql
