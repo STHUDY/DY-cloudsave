@@ -135,7 +135,7 @@ function FILECILCKEDBYUSER(Object){
     Axaj_requre("./Core/User/UserClickFile.php?File="+Object.id,function (result){
         if(result == "reflush"){
             location.reload();
-            
+            return false;
         }
         if(result != ""){
             document.body.innerHTML = document.body.innerHTML + result;
