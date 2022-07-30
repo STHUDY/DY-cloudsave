@@ -19,4 +19,10 @@ DY云储存(PHP:7.4)
           rewrite  ^(.*)$  /index.php/=Error  last;
          	break;
       }
-     
+      
+这里提供一个账号和密码
+
+      账号:pneumonoultramicroscopicsilicovo
+      密码:リュウグウノオトヒメノモトユイノキリハズシ
+
+购买API 
