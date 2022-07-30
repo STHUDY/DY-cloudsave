@@ -1,0 +1,68 @@
+<main class="container text-center form-signin" style='max-width:400px'>
+    <br><br><br><br><br><br>
+    <h1 class='display-2'><i class="bi bi-person-bounding-box"></i></h1>
+    <h1>User_Load_Title</h1>
+    <form action="./Core/User/LoadUser_Axaj.php" method="post" class="needs-validation bg-light" target="form-submit" novalidate>
+        <div class='form-floating'>
+            <input type='text' maxlength="32" class='form-control opacity-75' name='Load_UserID' id='userid' placeholder="User_Load_text_UserID_Tips" required>
+            <label for='sign_userid'>User_Load_text_UserID</label>
+            <div class="invalid-feedback">User_Load_Text_UserID_Tips</div>
+        </div><br>
+        
+        <div class='form-floating'>
+            <input type='password' maxlength="32" class='form-control opacity-75' name='Load_Password' id='userpassword' placeholder="User_Load_text_UserPassword_Tips" required>
+            <label for='sign_password'>User_Load_text_UserPassword</label>
+            <div class="invalid-feedback">User_Load_Text_UserPassword_Tips</div>
+        </div><br>
+        
+        <div>
+            <div class='form-floating' style="width:45%;float:left">
+                <input type='text' maxlength="6" class='form-control opacity-75' autocomplete="off" name='code' id='code' placeholder="User_Load_Text_UserCode_Tips" required>
+                <label for='code'>User_Load_text_UserCode</label>
+            </div>
+                    
+            <div id='usercode' style='width:50%;float:right;background-color:rgb(212 223 232 / 41%);height:calc(3.5rem + 2px)' class="rounded-3" onclick="API_USE_reload_htmlcode('usercode')"></div>
+        </div>
+        <br><br><br>
+        <input type='submit'  class='btn btn-dark w-100 btn-lg' value='User_Load_text_UserButtom'>
+    </form>
+</main>
+<script id='API_USE_htmlcode' src="./Core/Other/API_Axaj.php?type=HtmlCode"></script>
+<script>
+        API_USE_load_htmlcode("usercode")
+    function load_user(){
+        if(API_USE_check_htmlcode("code","value") == false){
+            
+            API_USE_reload_htmlcode('usercode')
+            return false;
+        }
+        return true;
+    }
+    
+    (function () {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }else if(API_USE_check_htmlcode("code","value") == false){
+            API_USE_reload_htmlcode('usercode')
+            event.preventDefault()
+            event.stopPropagation()
+            document.getElementById("code").className ='form-control code_error';
+            return false;
+        }else{
+            document.getElementById("code").className ='form-control';
+        }
+        form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+</script>
