@@ -2,6 +2,8 @@
 
 DY云储存(PHP:7.4)
 
+版本:2.0.3
+
 预览官网:http://pan.sthudy.top/
 
 
