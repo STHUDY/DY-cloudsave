@@ -29,19 +29,19 @@ if(is_dir($file_path) == true){
 $File_extension = pathinfo($file_path)['extension'];
 $html = "";
 $temp = "";
-if($File_extension == "mp4"){
+if($File_extension == "mp4" || $File_extension == "mov" || $File_extension == "MOV"){
     $html = file_get_contents("./../../Code/UserVideo/".$Country.".html");
     $temp = str_replace("+VideoNAMESHOW+",$file_paths,$html);
     $temp = str_replace("+VideoAddressSHOW+","./Core/Option/GetClickFile.php?File=".$_GET['File'],$temp);
 }
 
-if($File_extension == "jpg" || $File_extension == "png"){
+if($File_extension == "jpg" || $File_extension == "jfif" || $File_extension == "jpeg" || $File_extension == "png"){
     $html = file_get_contents("./../../Code/UserImg/".$Country.".html");
     $temp = str_replace("SHOWPHOTOWHACT",$file_paths,$html);
     $temp = str_replace("+PHOTOAddressSHOW+","./Core/Option/GetClickFile.php?File=".$_GET['File'],$temp);
 }
 
-if($File_extension == "m4a" || $File_extension == "mp3" || $File_extension == "ogg"){
+if($File_extension == "m4a" ||  $File_extension == "mp3" || $File_extension == "ogg"){
     $html = file_get_contents("./../../Code/UserMusic/".$Country.".html");
     $temp = str_replace("+MUSICNAMESHOW+",$file_paths,$html);
     $temp = str_replace("+MUSICAddressSHOW+","./Core/Option/GetClickFile.php?File=".$_GET['File'],$temp);

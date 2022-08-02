@@ -11,13 +11,21 @@ $Country = Country($_COOKIE["Country"]);
 if(is_dir($path) == false){
     die();
 }
-$html = file_get_contents("./../../Code/List/".$Country.".html");
+if($_COOKIE['devide'] == "app"){
+    $html = file_get_contents("./../../Code/AppList/".$Country.".html");
+}else{
+    $html = file_get_contents("./../../Code/List/".$Country.".html");
+}
 $now_path = base64_decode(urldecode($_COOKIE['Path']));
 $list = "";
 if($now_path != "/"){
     $temp = str_replace("+User_File_List_Name+",'• •',$html);
     $temp = str_replace("+User_File_List_True_Name+","..",$temp);
-    $temp = str_replace("+User_File_Time_Size+","返回上一个文件夹",$temp);
+    if($_COOKIE['devide'] == "app"){
+        $temp = str_replace("+User_File_Time_Size+","返回",$temp);
+    }else{
+        $temp = str_replace("+User_File_Time_Size+","返回上一个文件夹",$temp);
+    }
     $list = $temp;
     echo $list;
     $path = $path.$now_path."/";
@@ -36,7 +44,11 @@ foreach ($data as $value){
             $temp = str_replace("+User_File_List_Name+",'<i class="bi bi-folder"></i> '.$value,$html);
             $temp = str_replace("+User_File_List_True_Name+",$value,$temp);
             $temp = str_replace("+User_File_List_NO_ICON_Name+",$value,$temp);
-            $temp = str_replace("+User_File_Time_Size+",date("Y-m-d H:i",filectime($file_path)),$temp);
+            if($_COOKIE['devide'] == "app"){
+                $temp = str_replace("+User_File_Time_Size+","",$temp);
+            }else {
+                $temp = str_replace("+User_File_Time_Size+",date("Y-m-d H:i",filectime($file_path)),$temp);
+            }
             $list = $temp;
             echo $list;
         }
@@ -53,7 +65,11 @@ foreach ($data as $value){
                 $temp = str_replace("+User_File_List_Name+",load_icon($File_extension)." ".$value,$html);
                 $temp = str_replace("+User_File_List_True_Name+",$value,$temp);
                 $temp = str_replace("+User_File_List_NO_ICON_Name+",$value,$temp);
-                $temp = str_replace("+User_File_Time_Size+",date("Y-m-d H:i",filectime($file_path))." | ".get_file_size($file_path),$temp);
+                if($_COOKIE['devide'] == "app"){
+                    $temp = str_replace("+User_File_Time_Size+",get_file_size($file_path),$temp);
+                }else {
+                    $temp = str_replace("+User_File_Time_Size+",date("Y-m-d H:i",filectime($file_path))." | ".get_file_size($file_path),$temp);
+                }
                 $list = $temp;
                 echo $list;
             }
@@ -74,9 +90,15 @@ function load_icon($type){
         $html_icon = '<i class="bi bi-file-earmark-image"></i>';
     }else if($type == "jpg"){
         $html_icon = '<i class="bi bi-file-earmark-image"></i>';
+    }else if($type == "jfif"){
+        $html_icon = '<i class="bi bi-file-earmark-image"></i>';
+    }else if($type == "jpeg"){
+        $html_icon = '<i class="bi bi-file-earmark-image"></i>';
     }else if($type == "exe"){
         $html_icon = '<i class="bi bi-filetype-exe"></i>';
     }else if($type == "mp4"){
+        $html_icon = '<i class="bi bi-file-earmark-play"></i>';
+    }else if($type == "MOV"){
         $html_icon = '<i class="bi bi-file-earmark-play"></i>';
     }else if($type == "mov"){
         $html_icon = '<i class="bi bi-file-earmark-play"></i>';
@@ -98,6 +120,8 @@ function load_icon($type){
         $html_icon = '<i class="bi bi-filetype-java"></i>';
     }else if($type == "class"){
         $html_icon = '<i class="bi bi-filetype-java"></i>';
+    }else if($type == "pdf"){
+        $html_icon = '<i class="bi bi-filetype-pdf"></i>';
     }else {
         $html_icon = '<i class="bi bi-file-earmark"></i>';
     }
@@ -115,6 +139,8 @@ function judeg_extension($File_extension){
                 return true;
             case "gif":
                 return true;
+            case "jfif":
+                return true;
             default:
                 return false;
         }
@@ -123,6 +149,8 @@ function judeg_extension($File_extension){
             case "mp4":
                 return true;
             case "mov":
+                return true;
+            case "MOV":
                 return true;
             default:
                 return false;

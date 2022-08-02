@@ -42,6 +42,13 @@ if($Option_Load_connect_path == ""){
 if (isset($Basics_GetAddrass_Array[$Option_Load_connect_path]) == false) {
     $Option_Load_connect_path = 'error';
 }
+if($Core_Basics_JudgeDevice_Result == true && $Option_Load_connect_path == "main"){
+    $Option_Load_connect_path = "app";
+    setcookie("devide","app",time() + 60*60*24*30,"/");
+}else {
+    setcookie("devide","desktop",time() + 60*60*24*30,"/");
+}
+
 $Option_Load_TEXT = file_get_contents($Basics_GetAddrass_Array[$Option_Load_connect_path]);
 $Option_Load_Result = $Option_Load_TEXT;
 

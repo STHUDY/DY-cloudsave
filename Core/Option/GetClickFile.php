@@ -11,11 +11,11 @@ if($now_path != "/"){
 $file_path = $path.$filename;
 
 $File_extension = pathinfo($file_path)['extension'];
-if($File_extension == "mp4"){
+if($File_extension == "mp4" || $File_extension == "mov" || $File_extension == "MOV"){
     echo GetFile($file_path,$File_extension,"video");
 }
 
-if($File_extension == "jpg" || $File_extension == "png"){
+if($File_extension == "jpg" || $File_extension == "jfif" || $File_extension == "jpeg" || $File_extension == "png"){
     echo file_get_contents($file_path);
 }
 
