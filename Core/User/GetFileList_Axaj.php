@@ -19,6 +19,11 @@ if($_COOKIE['devide'] == "app"){
 $now_path = base64_decode(urldecode($_COOKIE['Path']));
 $list = "";
 if($now_path != "/"){
+    $path = $path.$now_path."/";
+    if(file_exists($path) == false){
+        setcookie('Path',urlencode(base64_encode("/")),time() + 60*60*24*30,"/");
+        return false;
+    }
     $temp = str_replace("+User_File_List_Name+",'• •',$html);
     $temp = str_replace("+User_File_List_True_Name+","..",$temp);
     if($_COOKIE['devide'] == "app"){
@@ -28,10 +33,10 @@ if($now_path != "/"){
     }
     $list = $temp;
     echo $list;
-    $path = $path.$now_path."/";
 }else {
     $path = $path."/";
 }
+
 
 $arr = array();
 $data = scandir($path);

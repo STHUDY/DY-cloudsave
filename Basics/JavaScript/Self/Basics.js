@@ -121,12 +121,12 @@ function LeftOptionClieked(Object){
 var TEMPTEMPTEMP="";
 function OPENUPLOADWINDOWS(){
     Axaj_requre("./Core/User/UploadFile_Axaj.php",function (result){
-        document.body.innerHTML = document.body.innerHTML + result;
+        document.getElementById("Windows").innerHTML = document.getElementById("Windows").innerHTML + result;
         TEMPTEMPTEMP = result
     },true)
 }
 function CLOSEUPLOADWINDOWS(){
-    document.getElementById("SHOWUPLOADWINDOWS").remove()
+    document.getElementById("Windows").innerHTML = ""
     if(getCookie("devide") == "app"){
         window.location.reload()
     }
@@ -137,6 +137,9 @@ function CREATEFLODER(){
         argument = document.getElementById("User0File0List")
         Axaj_requre("./Core/User/GetFileList_Axaj.php",function (result){
             argument.innerHTML = result;
+            if(getCookie("devide") == "app"){
+                window.location.reload();
+            }
         },true)
     },100)
 }
@@ -147,7 +150,7 @@ function FILECILCKEDBYUSER(Object){
             return false;
         }
         if(result != ""){
-            document.body.innerHTML = document.body.innerHTML + result;
+            document.getElementById("Windows").innerHTML = document.getElementById("Windows").innerHTML + result;
         }
     },true)
 }

@@ -1,7 +1,7 @@
 {
-    "Sql_host":"localhost",
-    "Sql_username":"DY_pan",
-    "Sql_password":"MEfhtBrnfytLSBCs",
-    "Sql_dbname":"dy_pan",
-    "Sql_port":"888"
+    "Sql_host":"",
+    "Sql_username":"",
+    "Sql_password":"",
+    "Sql_dbname":"",
+    "Sql_port":""
 }

@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light shadow-sm">
         <a class="navbar-brand" style="margin-left:1rem">Language_Navber_Name</a>
         <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-            <li class="nav-item">
-                <button class='nav-link bg-transparent btn btn-sm'></button>
+            <li class="nav-item  hidden-overflow text-nowrap" style="overflow:auto;width:calc(100vw - 180px)">
+                <span id='+FILE_Floder_Path_Now+' class='nav-link' style="font-size:10px">User_Now_Folder</span>
             </li>
         </ul>
         <ul class="navbar-nav">
@@ -28,7 +28,6 @@
         <hr>
         <button class="btn btn-outline-primary" onclick="Exit_User_load()">User_main_exit_load</button>
         <hr>
-        <span id='+FILE_Floder_Path_Now+' class='bg-transparent fs-6 text-truncate'>User_Now_Folder</span>
     </div>
 </div>
 <div class='bg-white position-bottom-left' style="overflow:auto;height:calc(100% - 56px);width:100%;margin-top:5px">
@@ -36,7 +35,7 @@
         
     </ul>
 </div>
-
+<div id="Windows"></div>
 <script>
 if(getCookie("option") == ""){
     LeftOptionClieked(document.getElementById("User_FIle_ALL_Link"))
