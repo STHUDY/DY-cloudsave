@@ -26,11 +26,16 @@ DY云储存(PHP:7.4)
       
 API-USE(https://api.sthudy.top/)
 
+可自行购买API
+  
+  API接口->验证码接口->HCJS验证码接口(购买)
+
+或者使用免费账号:
+
       账号:pneumonoultramicroscopicsilicovo
       密码:リュウグウノオトヒメノモトユイノキリハズシ
       UIC:101655625233194
 
-购买API 
 
 
 数据库:
