@@ -24,7 +24,7 @@ DY云储存(PHP:7.4)
          	break;
       }
       
-API-USE
+API-USE(https://api.sthudy.top/)
 
       账号:pneumonoultramicroscopicsilicovo
       密码:リュウグウノオトヒメノモトユイノキリハズシ
