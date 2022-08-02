@@ -4,6 +4,8 @@ function Jump(argument) {
 
 function Exit_User_load(){
     setCookie("userID","",0);
+    setCookie("device","",0);
+    setCookie("Path","",0);
     Jump("/Home")
 }
 function getCookie(cname)
@@ -25,6 +27,10 @@ function UpLoadUserFiles(Object){
     }, 10);
 }
 function DelFile(Object){
+    DelBool = confirm("确认删除:"+Object.name+" ?");
+    if(DelBool == false){
+        return false;
+    }
     Axaj_requre("./Core/User/UserDelFile_Axaj.php?name=" + Object.name,
     function (result){
         argument = document.getElementById("User0File0List");
@@ -68,7 +74,7 @@ function ChangeFileName(Object){
     }
     Temp = '<form action="./Core/User/ChangeUserFileName.php?File='+Object.name+'" method="post" class="needs-validation h-100" target="form-submit" style="margin-bottom:0">';
     Temp = Temp + '<input type="text" class="w-50" maxlength="32" id="FileChangeName_'+Object.name+'" name="FileChangeName" value="'+Object.name+'">';
-    Temp = Temp + '<button type="submit" class="border-0" onclick="CloseNoChangeFileNameForm(document.getElementById(\''+Object.name+'\'),this)" style="font-size:20px;background:none">取消</button>';
+    Temp = Temp + '<button type="button" class="border-0" onclick="CloseNoChangeFileNameForm(document.getElementById(\''+Object.name+'\'),this)" style="font-size:20px;background:none">取消</button>';
     Temp = Temp + '<input type="submit" class="border-0" onclick="CloseChangeFileNameForm(this,\''+Object.name+'\')" style="font-size:20px;background:none" value="更改"></form>'
     FILENAMEButton.style.display = "none";
     FILENAME.innerHTML = FILENAME.innerHTML + Temp;
@@ -121,6 +127,9 @@ function OPENUPLOADWINDOWS(){
 }
 function CLOSEUPLOADWINDOWS(){
     document.getElementById("SHOWUPLOADWINDOWS").remove()
+    if(getCookie("devide") == "app"){
+        window.location.reload()
+    }
 }
 function CREATEFLODER(){
     Axaj_requre("./Core/User/UserCreateFolder_Axaj.php",function (){},true)

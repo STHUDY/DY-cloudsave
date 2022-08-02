@@ -8,6 +8,17 @@
     bottom: 0;
     right:0;
 }
+.hidden-overflow::-webkit-scrollbar{
+    display: none;
+}
+.overflo-little::-webkit-scrollbar{
+    height: 2px;
+}
+.position-bottom-left{
+    position: fixed;
+    left: 0;
+    right:0;
+}
 .code_error{
     border-color: #dc3545 !important;
     padding-right: calc(1.5em + 0.75rem) !important;

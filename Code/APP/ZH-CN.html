@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light shadow-sm">
+        <a class="navbar-brand" style="margin-left:1rem">Language_Navber_Name</a>
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+            <li class="nav-item">
+                <button class='nav-link bg-transparent btn btn-sm'></button>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <button class='btn btn-lg btn-light bg-transparent link-item' data-bs-toggle="offcanvas" data-bs-target="#UserLISTSHOw" aria-controls="UserLISTSHOw"><i class="bi bi-list"></i></button>
+        </ul>
+</nav>
+<div id='UserLISTSHOw' class="offcanvas offcanvas-start" tabindex="-1" aria-labelledby="UserLISTSHOw">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="UserLISTSHOw">Not_Load_User</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="list-group">
+            <button class="list-group-item text-start" onclick="LeftOptionClieked(this)" id="User_FIle_ALL_Link"><i class="bi bi-folder-fill"></i> User_FIle_ALL_Link</button>
+            <button class="list-group-item text-start" onclick="LeftOptionClieked(this)" id="User_FIle_Photo_Link"><i class="bi bi-image"></i> User_FIle_Photo_Link</button>
+            <button class="list-group-item text-start" onclick="LeftOptionClieked(this)" id="User_FIle_Video_Link"><i class="bi bi-camera-video-fill"></i> User_FIle_Video_Link</button>
+            <button class="list-group-item text-start" onclick="LeftOptionClieked(this)" id="User_FIle_Music_Link"><i class="bi bi-music-note-beamed"></i> User_FIle_Music_Link</button>
+            <button class="list-group-item text-start" onclick="LeftOptionClieked(this)" id="User_FIle_Other_Link"><i class="bi bi-folder2"></i> User_FIle_Other_Link</button>
+        </ul>
+        <hr>
+        <button class='btn-outline-info btn' onclick='CREATEFLODER()'>User_Main_Create_Folder</button>
+        <button class='btn-outline-info btn' onclick='OPENUPLOADWINDOWS()'>User_main_updata_file</button>
+        <hr>
+        <button class="btn btn-outline-primary" onclick="Exit_User_load()">User_main_exit_load</button>
+        <hr>
+        <span id='+FILE_Floder_Path_Now+' class='bg-transparent fs-6 text-truncate'>User_Now_Folder</span>
+    </div>
+</div>
+<div class='bg-white position-bottom-left' style="overflow:auto;height:calc(100% - 56px);width:100%;margin-top:5px">
+    <ul id='User0File0List' class='list-group' style='margin-right:0;margin-left:0'>
+        
+    </ul>
+</div>
+
+<script>
+if(getCookie("option") == ""){
+    LeftOptionClieked(document.getElementById("User_FIle_ALL_Link"))
+}else {
+    LeftOptionClieked(document.getElementById(getCookie("option")))
+}
+</script>
