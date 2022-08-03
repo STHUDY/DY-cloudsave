@@ -23,6 +23,7 @@ function UpLoadUserFiles(Object){
     setTimeout(function() {
         Object.value = "上传中..."
         Object.disabled = "disabled";
+        document.getElementById("CHOOSEFILENAME").disabled = "disabled"
         document.getElementById("CLOSEUPLOADWINDOWS").disabled = "disabled"
     }, 10);
 }
