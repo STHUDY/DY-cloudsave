@@ -47,12 +47,15 @@ API-USE(https://api.sthudy.top/)
   请修改以下配置
   
   PHP(php.ini):
-           ==根据服务器配置而定==
-           post_max_size(POST数据最大尺寸):2047M
-           file_uploads(是否允许上传文件):true
-           upload_max_filesize(允许上传文件的最大尺寸):2047M
-           max_execution_time(最大脚本运行时间):30000
-           memory_limit(脚本内存限制):1280M
+  
+     ==根据服务器配置而定==
+           
+                 post_max_size(POST数据最大尺寸):2047M
+                 file_uploads(是否允许上传文件):true
+                 upload_max_filesize(允许上传文件的最大尺寸):2047M
+                 max_execution_time(最大脚本运行时间):30000
+                 memory_limit(脚本内存限制):1280M
       
   Nginx:
-           Client_max_body_size(最大上传文件):2047MB
+  
+                 Client_max_body_size(最大上传文件):2047MB
