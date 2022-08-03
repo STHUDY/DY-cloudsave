@@ -57,4 +57,5 @@ API-USE(https://api.sthudy.top/)
       
   Nginx:
   
+        ==根据服务器配置而定==
         Client_max_body_size(最大上传文件):2047MB
