@@ -74,7 +74,7 @@ function ChangeFileName(Object){
         return false;
     }
     Temp = '<form action="./Core/User/ChangeUserFileName.php?File='+Object.name+'" method="post" class="needs-validation h-100" target="form-submit" style="margin-bottom:0">';
-    Temp = Temp + '<input type="text" class="w-50" maxlength="32" id="FileChangeName_'+Object.name+'" name="FileChangeName" value="'+Object.name+'">';
+    Temp = Temp + '<input type="text" autocomplete="off" class="w-50" maxlength="32" id="FileChangeName_'+Object.name+'" name="FileChangeName" value="'+Object.name+'">';
     Temp = Temp + '<button type="button" class="border-0" onclick="CloseNoChangeFileNameForm(document.getElementById(\''+Object.name+'\'),this)" style="font-size:20px;background:none">取消</button>';
     Temp = Temp + '<input type="submit" class="border-0" onclick="CloseChangeFileNameForm(this,\''+Object.name+'\')" style="font-size:20px;background:none" value="更改"></form>'
     FILENAMEButton.style.display = "none";
