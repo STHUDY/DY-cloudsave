@@ -7,7 +7,7 @@ if($change_name == $filename){
 if($_GET['File'] == ".."){
     echo "<script>top.location.reload();</script>";
 }
-$userID = $_COOKIE['userID'];
+$userID = base64_decode(urldecode($_COOKIE['userID']));
 $path = './../../User/'.$userID;
 $now_path = base64_decode(urldecode($_COOKIE['Path']));
 if($now_path != "/"){
