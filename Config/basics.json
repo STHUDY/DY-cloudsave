@@ -1,0 +1,7 @@
+{
+    "Sql_host":"localhost",
+    "Sql_username":"",
+    "Sql_password":"",
+    "Sql_dbname":"",
+    "Sql_port":"888"
+}

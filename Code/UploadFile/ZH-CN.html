@@ -1,0 +1,36 @@
+<div class="modal d-block bg-secondary bg-opacity-50 py-5" tabindex="-1" role="dialog" id="SHOWUPLOADWINDOWS">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-5 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <!-- <h5 class="modal-title">Modal title</h5> -->
+                <h2 class="fw-bold mb-0">
+                    上传文件
+                </h2>
+                <button type="button" class="btn-close" id="CLOSEUPLOADWINDOWS" onclick="CLOSEUPLOADWINDOWS()" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body p-5 pt-0">
+                <div class='text-center form-signin' style='max-width:400px'>
+                    <h5>目前支持单文件上传</h5>
+                    <br>
+                    
+                    
+                    
+                    <form action="./Core/Option/GetUploadFile.php" method="post" class="bg-light" target="form-submit" enctype="multipart/form-data">
+                        
+                        <p>文件上传完成后，会自动刷新页面</p>
+                        
+                        <input class="form-control" id="CHOOSEFILENAME" name="file" type="file">
+                        
+                        <br>
+                        
+                        <input type='submit' onclick="UpLoadUserFiles(this)" class='btn btn-dark w-100 btn-lg' value='上传'>
+                        
+                        
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

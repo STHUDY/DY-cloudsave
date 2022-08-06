@@ -1,0 +1,8 @@
+{
+    "main":"./Code/Main/ZH-CN.html",
+    "error":"./Code/Error/ZH-CN.html",
+    "Home":"./Code/Home/ZH-CN.html",
+    "load":"./Code/UserLoad/ZH-CN.html",
+    "reg":"./Code/UserReg/ZH-CN.html",
+    "app":"./Code/APP/ZH-CN.html"
+}
