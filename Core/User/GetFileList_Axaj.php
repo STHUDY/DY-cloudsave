@@ -22,10 +22,11 @@ if($now_path != "/"){
     $path = $path.$now_path."/";
     if(file_exists($path) == false){
         setcookie('Path',urlencode(base64_encode("/")),time() + 60*60*24*30,"/");
-        return false;
+        die();
     }
     $temp = str_replace("+User_File_List_Name+",'• •',$html);
     $temp = str_replace("+User_File_List_True_Name+","..",$temp);
+    $temp = str_replace("+User_File_List_NO_ICON_Name+","..",$temp);
     if($_COOKIE['device'] == "app"){
         $temp = str_replace("+User_File_Time_Size+","返回",$temp);
     }else{

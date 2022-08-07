@@ -12,6 +12,9 @@ if($now_path != "/"){
 }else {
     $path = $path."/";
 }
+if(isset($_FILES["file"]) == false){
+    die();
+}
 if(is_dir($path) == false){
     mkdir($path);
     die();

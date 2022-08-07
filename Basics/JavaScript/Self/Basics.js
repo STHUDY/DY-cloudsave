@@ -162,3 +162,6 @@ function FILECILCKEDBYUSER(Object){
         }
     },true)
 }
+function ClearWindowsMedia(){
+    document.getElementById("Windows").innerHTML = ""
+}

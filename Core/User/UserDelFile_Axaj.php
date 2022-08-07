@@ -2,6 +2,10 @@
 $userID = base64_decode(urldecode($_COOKIE['userID']));
 $path = './../../User/'.$userID;
 $now_path = base64_decode(urldecode($_COOKIE['Path']));
+if($_GET['name'] == ".."){
+    echo "<script>top.location.reload();</script>";
+    die();
+}
 if($now_path != "/"){
     $path = $path.$now_path."/".$_GET['name'];
 }else {
