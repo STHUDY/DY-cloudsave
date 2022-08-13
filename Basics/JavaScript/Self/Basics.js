@@ -129,7 +129,7 @@ function LeftOptionClieked(Object){
 var TEMPTEMPTEMP="";
 function OPENUPLOADWINDOWS(){
     Axaj_requre("./Core/User/UploadFile_Axaj.php",function (result){
-        document.getElementById("Windows").innerHTML = document.getElementById("Windows").innerHTML + result;
+        document.getElementById("Windows").innerHTML = result;
         TEMPTEMPTEMP = result
     },true)
 }
@@ -158,7 +158,7 @@ function FILECILCKEDBYUSER(Object){
             return false;
         }
         if(result != ""){
-            document.getElementById("Windows").innerHTML = document.getElementById("Windows").innerHTML + result;
+            document.getElementById("Windows").innerHTML = result;
         }
     },true)
 }
