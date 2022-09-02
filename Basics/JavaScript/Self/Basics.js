@@ -21,12 +21,59 @@ function getCookie(cname)
 }
 function UpLoadUserFiles(Object){
     setTimeout(function() {
+        if(document.getElementById("CHOOSEFILENAME").value == ""){
+            return 0;
+        }
         Object.value = "上传中..."
         Object.disabled = "disabled";
         document.getElementById("CHOOSEFILENAME").disabled = "disabled"
         document.getElementById("CLOSEUPLOADWINDOWS").disabled = "disabled"
+        document.getElementById("UpLoadProgressALL").style.display = 'block'
+        UpsLoadreadFile()
     }, 10);
 }
+function UpsLoadAXAJFile(Url) {
+	if (window.ActiveXObject) {
+		var xpost = new ActiveXObject("Microsoft.XMLHTTP");
+	} else {
+		var xpost = new XMLHttpRequest();
+	}
+	xpost.onreadystatechange = function() {
+		if (xpost.readyState == 4) {
+			if (xpost.status == 200) {
+			    window.location.reload()
+			}
+			if (xpost.status == 413){
+			    alert("文件过大!!!")
+			    window.location.reload()
+			}
+		}
+	}
+
+	xpost.open("post", './Core/Option/GetUploadFile.php', true);
+	xpost.upload.onprogress = function(evt) {
+		per = ((evt.loaded / evt.total) * 100).toFixed(2);
+		document.getElementById("UpLoadProgressOne").style = "width: "+per.toString()+"%"
+		document.getElementById("UpLoadProgressTwo").innerHTML = per.toString() + "%"
+	}
+	xpost.send(Url);
+}
+
+function UpsLoadpostFile(filea) {
+	var SendUrl = new FormData();
+	SendUrl.append('file', document.getElementById("CHOOSEFILENAME")
+		.files[0]);
+	UpsLoadAXAJFile(SendUrl);
+}
+function UpsLoadreadFile() {
+	files = document.getElementById("CHOOSEFILENAME").files;
+	fisize = files[0].size;
+	if (fisize > 1) {
+		filea = files[0];
+		UpsLoadpostFile(filea);
+	}
+}
+
 function DelFile(Object){
     DelBool = confirm("确认删除:"+Object.name+" ?");
     if(DelBool == false){

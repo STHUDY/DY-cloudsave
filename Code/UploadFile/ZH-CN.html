@@ -12,19 +12,19 @@
             <div class="modal-body p-5 pt-0">
                 <div class='text-center form-signin' style='max-width:400px'>
                     <h5>目前支持单文件上传</h5>
+                    <span>(暂时不支持拖拽文件)</span>
                     <br>
                     
-                    
-                    
-                    <form action="./Core/Option/GetUploadFile.php" method="post" class="bg-light" target="form-submit" enctype="multipart/form-data">
+                    <form method="post" class="bg-light" target="form-submit" enctype="multipart/form-data">
                         
                         <p>文件上传完成后，会自动刷新页面</p>
-                        
-                        <input class="form-control" id="CHOOSEFILENAME" name="file" type="file">
-                        
+                        <input class="form-control" style="margin-top:2px" id="CHOOSEFILENAME" name="file" type="file">
+                        <div class="progress" id="UpLoadProgressALL" style="display:none;height:20px">
+                            <div class="progress-bar h-100" id="UpLoadProgressOne" role="progressbar" style="width: 0%;"></div>
+                            <span aria-valuemin="0" aria-valuemax="100" class='text-dark' id="UpLoadProgressTwo" style="position: relative;left: 2px;top: -20px;">0%</span>
+                        </div>
                         <br>
-                        
-                        <input type='submit' onclick="UpLoadUserFiles(this)" class='btn btn-dark w-100 btn-lg' value='上传'>
+                        <input type='button' onclick="UpLoadUserFiles(this)" class='btn btn-dark w-100 btn-lg' value='上传'>
                         
                         
                     </form>

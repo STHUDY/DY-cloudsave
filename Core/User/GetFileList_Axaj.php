@@ -90,6 +90,8 @@ function load_icon($type){
         $html_icon = '<i class="bi bi-file-earmark-zip"></i>';
     }else if($type == "rar"){
         $html_icon = '<i class="bi bi-file-earmark-zip"></i>';
+    }else if($type == "7z"){
+        $html_icon = '<i class="bi bi-file-earmark-zip"></i>';
     }else if($type == "ini"){
         $html_icon = '<i class="bi bi-file-earmark-ruled"></i>';
     }else if($type == "php"){
