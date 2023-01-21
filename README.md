@@ -3,7 +3,8 @@
 <del>最后一次更新:2020-8-6 11:43</del>
 
 <del>【作者将缓慢更新此项目】</del>
-网盘更新已经移至:https://sober-up.cn/archives/386
+
+网盘项目移至:https://sober-up.cn/archives/386
 
 兼容移动端
 
