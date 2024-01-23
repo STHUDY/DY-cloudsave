@@ -1,5 +1,7 @@
 # DY-cloudsave
 
+这个网盘项目已不再更新，请新网盘链接：https://github.com/STHUDY/CYPCloudDisk
+
 <del>最后一次更新:2020-8-6 11:43</del>
 
 <del>【作者将缓慢更新此项目】</del>
